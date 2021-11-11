@@ -9,7 +9,7 @@ export const TextInput = ({
 }) => {
   const [currentValue, setCurrentValue] = useState('');
 
-  const handleTextChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const clean = removeDiacritics(event.target.value);
     setCurrentValue(clean);
     onUpdate(toL33t(clean));
@@ -43,7 +43,6 @@ export const TextInput = ({
           value={currentValue}
           className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
           placeholder="WRITE HERE!"
-          // @ts-ignore next-line
           onChange={handleTextChange}
         />
       </div>
